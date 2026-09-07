@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart SF6 Dashboard | EGAT Green Innovation</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font (Prompt) -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Prompt', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <header class="bg-slate-800 border-b border-slate-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="bg-emerald-500 text-slate-900 p-2.5 rounded-xl font-bold text-xl shadow-lg shadow-emerald-500/20">
+                    <i class="fa-solid fa-bolt-lightning"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold tracking-wide text-white">SMART SF6 LEAKAGE & REGENERATION</h1>
+                    <p class="text-xs text-slate-400">EGAT GREEN INNO FOR ESG & CIRCULAR FUTURE | ทีม: ฝั่งธนไม่หมูะบูดาบี</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs rounded-full font-medium flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> IoT & AI System Online (24/7)
+                </span>
+                <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs rounded-full font-medium">
+                    <i class="fa-solid fa-shield-halved"></i> EMF Shielded
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 py-6 flex-grow space-y-6 w-full">
+
+        <!-- Top Metrics Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Card 1 -->
+            <div class="bg-slate-800/80 border border-slate-700/60 rounded-2xl p-5 shadow-xl hover:border-emerald-500/50 transition-all">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-xs font-medium text-slate-400">ปริมาณก๊าซป้องกันการรั่วไหล</p>
+                        <h3 class="text-2xl font-bold text-white mt-1">20.0 <span class="text-sm font-normal text-slate-400">kg/สถานี</span></h3>
+                    </div>
+                    <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl">
+                        <i class="fa-solid fa-gauge-high text-xl"></i>
+                    </div>
+                </div>
+                <div class="mt-4 flex items-center text-xs text-emerald-400 gap-1 font-medium">
+                    <i class="fa-solid fa-arrow-trend-up"></i> ประหยัดกว่าระบบเดิมแบบ Real-time
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-slate-800/80 border border-slate-700/60 rounded-2xl p-5 shadow-xl hover:border-emerald-500/50 transition-all">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-xs font-medium text-slate-400">ลดก๊าซเรือนกระจก (Carbon Reduction)</p>
+                        <h3 class="text-2xl font-bold text-emerald-400 mt-1">470 <span class="text-sm font-normal text-slate-400">TCO₂E/ปี</span></h3>
+                    </div>
+                    <div class="p-3 bg-blue-500/10 text-blue-400 rounded-xl">
+                        <i class="fa-solid fa-earth-americas text-xl"></i>
+                    </div>
+                </div>
+                <div class="mt-4 flex items-center text-xs text-slate-400 gap-1">
+                    คำนวณจากค่า GWP 23,500 ของก๊าซ SF₆
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-slate-800/80 border border-slate-700/60 rounded-2xl p-5 shadow-xl hover:border-emerald-500/50 transition-all">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-xs font-medium text-slate-400">ความบริสุทธิ์หลัง Regeneration</p>
+                        <h3 class="text-2xl font-bold text-cyan-400 mt-1">≥ 99.0%</h3>
+                    </div>
+                    <div class="p-3 bg-cyan-500/10 text-cyan-400 rounded-xl">
+                        <i class="fa-solid fa-atom text-xl"></i>
+                    </div>
+                </div>
+                <div class="mt-4 flex items-center text-xs text-slate-400 gap-1">
+                    มาตรฐานสากล IEC 60376 (Dew point &lt; -40°C)
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-slate-800/80 border border-slate-700/60 rounded-2xl p-5 shadow-xl hover:border-emerald-500/50 transition-all">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-xs font-medium text-slate-400">ระยะเวลาคืนทุน (ROI)</p>
+                        <h3 class="text-2xl font-bold text-amber-400 mt-1">20 - 21 <span class="text-sm font-normal text-slate-400">เดือน</span></h3>
+                    </div>
+                    <div class="p-3 bg-amber-500/10 text-amber-400 rounded-xl">
+                        <i class="fa-solid fa-coins text-xl"></i>
+                    </div>
+                </div>
+                <div class="mt-4 flex items-center text-xs text-slate-400 gap-1">
+                    งบลงทุนเริ่มต้น ~150,000 บาท / สถานี
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Line Chart: Pressure & AI Prediction -->
+            <div class="lg:col-span-2 bg-slate-800/80 border border-slate-700/60 rounded-2xl p-5 shadow-xl flex flex-col">
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <h2 class="font-bold text-white text-base">ระบบพยากรณ์ AI & กราฟแรงดันตู้ GIS (PV = nRT Compensated)</h2>
+                        <p class="text-xs text-slate-400">แจ้งเตือนล่วงหน้า 7-14 วัน ก่อนแรงดันถึงขีดอันตรายโดยไม่ต้องตัดไฟ</p>
+                    </div>
+                    <span class="px-2.5 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded-lg font-semibold">AI Active</span>
+                </div>
+                <div class="relative flex-grow h-72">
+                    <canvas id="pressureChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Circular Regeneration Status -->
+            <div class="bg-slate-800/80 border border-slate-700/60 rounded-2xl p-5 shadow-xl flex flex-col justify-between">
+                <div>
+                    <h2 class="font-bold text-white text-base mb-1">สถานะวงจรเศรษฐกิจหมุนเวียน</h2>
+                    <p class="text-xs text-slate-400 mb-4">Circular & Zero Waste Progress (IEC 62271-4)</p>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-xs mb-1 font-medium">
+                                <span class="text-slate-300">1. Gas Recovery & Evacuation</span>
+                                <span class="text-emerald-400 font-bold">100%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                                <div class="bg-emerald-500 h-full rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs mb-1 font-medium">
+                                <span class="text-slate-300">2. 3-Step Filtration & Purification</span>
+                                <span class="text-emerald-400 font-bold">99.5%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                                <div class="bg-emerald-500 h-full rounded-full" style="width: 99.5%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs mb-1 font-medium">
+                                <span class="text-slate-300">3. Quality Analysis (IEC 60376)</span>
+                                <span class="text-cyan-400 font-bold">Passed</span>
+                            </div>
+                            <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                                <div class="bg-cyan-400 h-full rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs mb-1 font-medium">
+                                <span class="text-slate-300">4. Refill & Reuse (Zero Waste)</span>
+                                <span class="text-emerald-400 font-bold">Ready</span>
+                            </div>
+                            <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                                <div class="bg-emerald-500 h-full rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-slate-700/60">
+                    <div class="flex items-center justify-between text-xs text-slate-400">
+                        <span>Digital Tracking:</span>
+                        <span class="text-white font-mono bg-slate-700 px-2 py-0.5 rounded">QR / RFID Verified</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GIS Substation Status Table & Logs -->
+        <div class="bg-slate-800/80 border border-slate-700/60 rounded-2xl p-5 shadow-xl">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
+                <div>
+                    <h2 class="font-bold text-white text-base">สถานะตู้ GIS ภายในสถานีไฟฟ้าแรงสูง (Sandbox Monitoring)</h2>
+                    <p class="text-xs text-slate-400">แสดงผลตรวจวัด Real-time ผ่าน LoRaWAN / NB-IoT พร้อมเกราะป้องกัน EMF</p>
+                </div>
+                <button onclick="alert('Exported ESG Data to CSV Successfully!')" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold rounded-xl transition-all shadow-lg shadow-emerald-600/20 flex items-center gap-2">
+                    <i class="fa-solid fa-file-excel"></i> Export ESG Report / Carbon Credit
+                </button>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs text-slate-300">
+                    <thead class="bg-slate-700/50 text-slate-400 uppercase font-semibold">
+                        <tr>
+                            <th class="p-3 rounded-l-xl">Compartment ID</th>
+                            <th class="p-3">Pressure (MPa)</th>
+                            <th class="p-3">Temp (°C)</th>
+                            <th class="p-3">Leakage Rate</th>
+                            <th class="p-3">AI Prediction Status</th>
+                            <th class="p-3 rounded-r-xl">Action / QR Tracking</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-700/40">
+                        <tr class="hover:bg-slate-700/20 transition-all">
+                            <td class="p-3 font-medium text-white flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span> GIS-Bay-01 (HV)
+                            </td>
+                            <td class="p-3 font-mono">0.65 MPa</td>
+                            <td class="p-3 font-mono">28.5 °C</td>
+                            <td class="p-3 text-emerald-400 font-medium">Normal (&lt; 0.1%)</td>
+                            <td class="p-3"><span class="px-2 py-0.5 bg-emerald-500/10 text-emerald-400 rounded text-[10px]">Stable</span></td>
+                            <td class="p-3 font-mono text-slate-400">#QR-SF6-8821</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/20 transition-all">
+                            <td class="p-3 font-medium text-white flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping"></span> GIS-Bay-02 (EHV)
+                            </td>
+                            <td class="p-3 font-mono">0.52 MPa</td>
+                            <td class="p-3 font-mono">31.2 °C</td>
+                            <td class="p-3 text-amber-400 font-medium">Micro-leakage detected</td>
+                            <td class="p-3"><span class="px-2 py-0.5 bg-amber-500/10 text-amber-400 rounded text-[10px] font-semibold">Warning (In 9 days)</span></td>
+                            <td class="p-3 font-mono text-amber-400 font-medium">Scheduled Recovery</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700/20 transition-all">
+                            <td class="p-3 font-medium text-white flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span> GIS-Bay-03 (HV)
+                            </td>
+                            <td class="p-3 font-mono">0.68 MPa</td>
+                            <td class="p-3 font-mono">27.8 °C</td>
+                            <td class="p-3 text-emerald-400 font-medium">Normal (&lt; 0.1%)</td>
+                            <td class="p-3"><span class="px-2 py-0.5 bg-emerald-500/10 text-emerald-400 rounded text-[10px]">Stable</span></td>
+                            <td class="p-3 font-mono text-slate-400">#QR-SF6-8823</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 border-t border-slate-700 text-center py-4 text-xs text-slate-400 mt-auto">
+        <p>Smart SF6 Leakage & Regeneration Management System © 2026 | EGAT GREEN INNO FOR ESG & CIRCULAR FUTURE</p>
+    </footer>
+
+    <!-- Chart Script -->
+    <script>
+        const ctx = document.getElementById('pressureChart').getContext('2d');
+        const pressureChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Day 1', 'Day 3', 'Day 6', 'Day 9', 'Day 12', 'Day 14 (AI Alert)', 'Day 16'],
+                datasets: [{
+                    label: 'Actual Pressure (MPa)',
+                    data: [0.68, 0.67, 0.66, 0.64, 0.61, 0.58, 0.52],
+                    borderColor: '#10b981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.3
+                }, {
+                    label: 'AI Trend Prediction (PV=nRT)',
+                    data: [null, null, null, null, 0.61, 0.57, 0.50],
+                    borderColor: '#f59e0b',
+                    borderDash: [5, 5],
+                    borderWidth: 2,
+                    fill: false,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#94a3b8',
+                            font: { family: 'Prompt', size: 11 }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { color: 'rgba(51, 65, 85, 0.4)' },
+                        ticks: { color: '#94a3b8', font: { family: 'Prompt' } }
+                    },
+                    y: {
+                        grid: { color: 'rgba(51, 65, 85, 0.4)' },
+                        ticks: { color: '#94a3b8', font: { family: 'Prompt' } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
