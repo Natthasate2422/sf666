@@ -784,6 +784,34 @@
         function viewCabinetDetail(cabName) {
             alert(`แสดงรายละเอียดถังแก๊สทั้งหมดภายในตู้ ${cabName} พร้อมสถานะ QR Code และประวัติการบำรุงรักษา`);
         }
+        <div class="container">
+    <!-- ส่วนแสดงกราฟ -->
+    <div class="chart-container">
+        <canvas id="predictionChart"></canvas>
+    </div>
+
+    <!-- แผงควบคุมการจำลองค่า -->
+    <div class="control-panel">
+        <h3>แผงควบคุมการจำลองค่าพยากรณ์</h3>
+        
+        <div class="control-group">
+            <label for="growthRate">อัตราการเติบโต (%): <span id="growthRateVal">5</span>%</label>
+            <input type="range" id="growthRate" min="-50" max="100" value="5" step="1">
+        </div>
+
+        <div class="control-group">
+            <label for="timeHorizon">ระยะเวลาพยากรณ์ (ปี/เดือน): <span id="timeHorizonVal">12</span></label>
+            <input type="range" id="timeHorizon" min="1" max="60" value="12" step="1">
+        </div>
+
+        <div class="control-group">
+            <label for="baseFactor">ตัวคูณฐานเริ่มต้น (Base Factor):</label>
+            <input type="number" id="baseFactor" value="100" step="10">
+        </div>
+
+        <button id="resetBtn">รีเซ็ตค่าเริ่มต้น</button>
+    </div>
+</div>
     </script>
 </body>
 </html>
